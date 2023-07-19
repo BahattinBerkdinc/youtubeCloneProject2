@@ -1,0 +1,176 @@
+ [
+    {
+        "id": 1,
+        "content": "Home",
+        "icon": "AiFillHome"
+    },
+    {
+        "id": 2,
+        "content": "Shorts",
+        "icon": "AiOutlinePlayCircle"
+    },
+    {
+        "id": 3,
+        "content": "Subscription",
+        "icon": "MdOutlineSubscriptions"
+    },
+    {
+        "id": 4,
+        "content": "Youtube Music",
+        "icon": "SiYoutubemusic"
+    },
+    {
+        "id": 5,
+        "content": "Library",
+        "icon": "MdVideoLibrary"
+    },
+    {
+        "id": 6,
+        "content": "History",
+        "icon": "AiOutlineHistory"
+    },
+    {
+        "id": 7,
+        "content": "Your Videos",
+        "icon": "CiYoutube"
+    },
+    {
+        "id": 8,
+        "content": "Watch Later",
+        "icon": "BiTimeFive"
+    },
+    {
+        "id": 9,
+        "content": "Downloads",
+        "icon": "AiOutlineDownload"
+    },
+    {
+        "id": 10,
+        "content": "Liked Videos",
+        "icon": "AiOutlineLike"
+    },
+    {
+        "id": 11,
+        "content": "Show More",
+        "icon": "MdKeyboardArrowDown"
+    },
+    {
+        "id": 12,
+        "content": "Show More",
+        "icon": "MdKeyboardArrowDown"
+    },
+    {
+        "id": 13,
+        "content": "Trending",
+        "icon": "AiOutlineFire",
+        "categoryName":"explore"
+    },
+    {
+        "id": 14,
+        "content": "Shopping",
+        "icon": "AiOutlineShopping",
+        "categoryName":"explore"
+    },
+    {
+        "id": 15,
+        "content": "Music",
+        "icon": "BsMusicNote",
+        "categoryName":"explore"
+    },
+    {
+        "id": 16,
+        "content": "Movies & TV",
+        "icon": "BiMoviePlay",
+        "categoryName":"explore"
+    },
+    {
+        "id": 17,
+        "content": "Live",
+        "icon": "MdLiveTv",
+        "categoryName":"explore"
+    },
+    {
+        "id": 18,
+        "content": "Gaming",
+        "icon": "SiYoutubegaming",
+        "categoryName":"explore"
+    },
+    {
+        "id": 19,
+        "content": "News",
+        "icon": "BiNews",
+        "categoryName":"explore"
+    },
+    {
+        "id": 20,
+        "content": "Sport",
+        "icon": "TfiCup",
+        "categoryName":"explore"
+    },
+    {
+        "id": 21,
+        "content": "Learning",
+        "icon": "GoLightBulb",
+        "categoryName":"explore"
+    },
+    {
+        "id": 22,
+        "content": "Fashion & beauty",
+        "icon": "GiClothes",
+        "categoryName":"explore"
+    },
+    {
+        "id": 23,
+        "content": "Podcasts",
+        "icon": "MdOutlinePodcasts",
+        "categoryName":"explore"
+    },
+    {
+        "id": 24,
+        "content": "Youtube Studio",
+        "icon": "SiYoutubestudio",
+        "categoryName":"morefromyoutube"
+    },
+    {
+        "id": 25,
+        "content": "Youtube Music",
+        "icon": "SiYoutubemusic",
+        "categoryName":"morefromyoutube"
+    },
+    {
+        "id": 26,
+        "content": "Youtube Kids",
+        "icon": "TbBrandYoutubeKids",
+        "categoryName":"morefromyoutube"
+    },
+    {
+        "id": 27,
+        "content": "Youtube TV",
+        "icon": "TiSocialYoutube",
+        "categoryName":"morefromyoutube"
+    },
+    {
+        "id": 28,
+        "content": "Settings",
+        "icon": "CiSettings",
+        "categoryName":"settings"
+    },
+    {
+        "id": 29,
+        "content": "Report history",
+        "icon": "CiFlag1",
+        "categoryName":"settings"
+    },
+    {
+        "id": 30,
+        "content": "Help",
+        "icon": "BiHelpCircle",
+        "categoryName":"settings"
+    },
+    {
+        "id": 31,
+        "content": "Send Feedback",
+        "icon": "MdOutlineFeedback",
+        "categoryName":"settings"
+    }
+]
