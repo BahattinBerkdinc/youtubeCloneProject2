@@ -1,11 +1,17 @@
 
 import './App.css';
-import AsideMenu from './components/asideMenu/AsideMenu';
+import VideoCard from './components/video-card/VideoCard';
+// import Navbar from './components/Navbar/Navbar';
+// import AsideMenu from './components/asideMenu/AsideMenu';
 
 function App() {
   return (
     <div className="App">
-      <AsideMenu/>
+     {/* <Navbar/>
+      <main>
+        <AsideMenu/>
+      </main> */}
+      <VideoCard/>
     </div>
   );
 }

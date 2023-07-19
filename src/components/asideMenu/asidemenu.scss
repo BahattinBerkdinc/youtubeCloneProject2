@@ -1,6 +1,102 @@
 .asideMenu{
-    background-color: red;
     height: 100vh;
-    width: 300px;
+    width: 250px;
+    transition: all 500ms ease-in;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    -ms-transition: all 500ms ease-in;
+    -o-transition: all 500ms ease-in;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+     
+}
+    
+      &::-webkit-scrollbar-thumb {
+        background-color: #55555590;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+}
+    
+      &:hover {
+        overflow-y: auto; /* Farenin üzerine gelince scroll çubuğunu göster */
+       
+      }
+
+
+
+  ul{
+        list-style: none;
+        padding: 0;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        margin-top: 1rem;
+
+        border-bottom: 1px solid rgba(128, 128, 128, 0.332);
+
+        .aside-title{
+            margin: 1rem 0;
+        }
+
+        li{
+            display: flex;
+            align-items: center;
+            padding: .7rem;
+            border-radius: 15px;
+            gap: 1.5rem;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            font-size: .8rem;
+            font-weight: 200;
+            transition: all 500ms ease-in-out ;
+            -webkit-transition: all 500ms ease-in-out ;
+            -moz-transition: all 500ms ease-in-out ;
+            -ms-transition: all 500ms ease-in-out ;
+            -o-transition: all 500ms ease-in-out ;
+            cursor: pointer;
+            &:hover
+            {
+                background-color: rgba(211, 211, 211, 0.472);
+            }
+
+            span{
+                font-size: 1.3rem;
+            }
+        }
+
+        .morefromyoutube{
+            span{
+                color: red;
+            }
+        }
+    
+    }
+
+    .aside-channel{
+        display: flex;
+        align-items: center;
+
+        .profile-photo{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+}
+    }
     
 }

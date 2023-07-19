@@ -55,11 +55,6 @@
         "icon": "MdKeyboardArrowDown"
     },
     {
-        "id": 12,
-        "content": "Show More",
-        "icon": "MdKeyboardArrowDown"
-    },
-    {
         "id": 13,
         "content": "Trending",
         "icon": "AiOutlineFire",

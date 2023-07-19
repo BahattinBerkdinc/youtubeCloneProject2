@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './asidemenu.scss'
 import { AiFillHome, AiOutlinePlayCircle,AiOutlineHistory,AiOutlineDownload,AiOutlineLike,AiOutlineFire,AiOutlineShopping } from 'react-icons/ai';
 import { MdOutlineSubscriptions,MdVideoLibrary,MdLiveTv,MdOutlinePodcasts,MdOutlineFeedback } from 'react-icons/md';
@@ -26,6 +26,10 @@ const iconComponents = {
 };
 
 const AsideMenu = () => {
+
+  const [data, setData] = useState([]);
+
+
 const renderIcon = (iconName) => {
     const IconComponent = iconComponents[iconName];
     if (IconComponent) {
@@ -41,51 +45,62 @@ const renderIcon = (iconName) => {
     try {
       const response = await axios.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&key=AIzaSyCAe0KPONaQqZb84N5IY7uo7upv-TJxiqU');
   
-      console.log(response.data.items[0].snippet.thumbnails.medium.url);
+      // console.log(response.data.items[0].snippet);
+      setData(response.data.items);
     } catch (error) {
       console.error(error);
     }
   }
 
   
+  useEffect(() => {
+    getChannelInfo();
+  },[])
   
-useEffect(() => {
-  getChannelInfo();
-},[])
-  
-
-
+  console.log(data);
 
   return (
     <div className='asideMenu'>
       <ul className='asideItem' >
       {list.slice(0,4).map((item) => (
-          <li key={item.id}>{renderIcon(item.icon)}{item.content}</li>
+          <li key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
           ))}
           </ul>
 
           <ul className='asideItem' >
-      {list.slice(5,12).map((item) => (
-          <li key={item.id}>{renderIcon(item.icon)}{item.content}</li>
+      {list.slice(5,11).map((item) => (
+          <li key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
           ))}
           </ul>
 
 
       <div>
-        <div>Subscription</div>
         <ul>
+        <div className='aside-title'>Subscription</div>
+          {
+              data.map((item)=>(
+                    <li className='aside-channel'>
+                       <div className="profile-photo">
+                        <img src={item.snippet.thumbnails.medium.url} alt="" />
+                       </div>
+                       <div className='channel-name'>{item.snippet.channelTitle}</div>
+                  </li>
+              ))
+          }
 
+
+            
         </ul>
       </div>
 
       <div>
-        <div>Explore</div>
         <ul>
+        <div className='aside-title'>Explore</div>
           {
             list.map((item)=>{
               if(item.categoryName==="explore"){
                 return(
-                  <li key={item.id}>{renderIcon(item.icon)}{item.content}</li>
+                  <li key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
                 )
               }else{
                 return null
@@ -96,13 +111,13 @@ useEffect(() => {
       </div>
 
       <div>
-        <div>More From YouTube</div>
         <ul>
+        <div className='aside-title'>More From YouTube</div>
           {
             list.map((item)=>{
               if(item.categoryName==="morefromyoutube"){
                 return(
-                  <li key={item.id}>{renderIcon(item.icon)}{item.content}</li>
+                  <li className='morefromyoutube' key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
                 )
               }else{
                 return null
@@ -118,7 +133,7 @@ useEffect(() => {
             list.map((item)=>{
               if(item.categoryName==="settings"){
                 return(
-                  <li key={item.id}>{renderIcon(item.icon)}{item.content}</li>
+                  <li key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
                 )
               }else{
                 return null
