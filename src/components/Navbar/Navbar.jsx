@@ -9,17 +9,18 @@ import {Form, InputGroup} from "react-bootstrap";
 import "./navbar.scss"
 
 
-const Navbar = () => {
+const Navbaryt = () => {
   return (
     <nav>
        <div className='nav-left'>
        <Burger/>
-        <img style={{width:"120px"}} className='image-fluid' src={logo} alt="" />
+        <img style={{width:"100px"}} className='image-fluid' src={logo} alt="" />
        </div>
 
     <div className="nav-mid">
-    <InputGroup className='input '>
+    <InputGroup >
         <Form.Control 
+        className='input'
           placeholder="Search"
           aria-label="Username"
           aria-describedby="basic-addon1"
@@ -49,4 +50,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbaryt

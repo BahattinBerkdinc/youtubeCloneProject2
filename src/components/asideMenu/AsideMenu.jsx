@@ -63,20 +63,20 @@ const renderIcon = (iconName) => {
     <div className='asideMenu'>
       <ul className='asideItem' >
       {list.slice(0,4).map((item) => (
-          <li key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
+          <li key={item.id}><span className="icons">{renderIcon(item.icon)}</span><span>{item.content}</span></li>
           ))}
           </ul>
 
-          <ul className='asideItem' >
-      {list.slice(5,11).map((item) => (
-          <li key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
+          <ul className='asideItem second-section' >
+      {list.slice(4,11).map((item) => (
+          <li key={item.id}><span className="icons">{renderIcon(item.icon)}</span><span>{item.content}</span></li>
           ))}
           </ul>
 
 
-      <div>
+      <div className='subscription'>
         <ul>
-        <div className='aside-title'>Subscription</div>
+        <div className='aside-title '>Subscription</div>
           {
               data.map((item)=>(
                     <li className='aside-channel'>
@@ -93,14 +93,14 @@ const renderIcon = (iconName) => {
         </ul>
       </div>
 
-      <div>
+      <div className='explore'>
         <ul>
-        <div className='aside-title'>Explore</div>
+        <div className='aside-title '>Explore</div>
           {
             list.map((item)=>{
               if(item.categoryName==="explore"){
                 return(
-                  <li key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
+                  <li key={item.id}><span className="icons">{renderIcon(item.icon)}</span><span>{item.content}</span></li>
                 )
               }else{
                 return null
@@ -110,14 +110,14 @@ const renderIcon = (iconName) => {
         </ul>
       </div>
 
-      <div>
+      <div className='moreFromYoutube'>
         <ul>
-        <div className='aside-title'>More From YouTube</div>
+        <div className='aside-title '>More From YouTube</div>
           {
             list.map((item)=>{
               if(item.categoryName==="morefromyoutube"){
                 return(
-                  <li className='morefromyoutube' key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
+                  <li className='morefromyoutube' key={item.id}><span className="icons">{renderIcon(item.icon)}</span><span>{item.content}</span></li>
                 )
               }else{
                 return null
@@ -127,13 +127,16 @@ const renderIcon = (iconName) => {
         </ul>
       </div>
 
-      <div>
+      <div className='settings'>
         <ul>
           {
             list.map((item)=>{
               if(item.categoryName==="settings"){
                 return(
-                  <li key={item.id}><span>{renderIcon(item.icon)}</span>{item.content}</li>
+                  <li key={item.id}>
+                    <span className="icons">{renderIcon(item.icon)}</span>
+                    <span>{item.content}</span>
+                    </li>
                 )
               }else{
                 return null

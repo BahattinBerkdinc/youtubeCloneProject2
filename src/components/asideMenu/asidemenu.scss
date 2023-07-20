@@ -1,11 +1,19 @@
 .asideMenu{
+ 
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    position: sticky;
     height: 100vh;
-    width: 250px;
+    top: 0;
+    bottom: 0;
     transition: all 500ms ease-in;
     -webkit-transition: all 500ms ease-in;
     -moz-transition: all 500ms ease-in;
     -ms-transition: all 500ms ease-in;
     -o-transition: all 500ms ease-in;
+    background-color: white;
+    overflow-y: auto;
 
     &::-webkit-scrollbar {
         width: 3px;
@@ -64,9 +72,11 @@
                 background-color: rgba(211, 211, 211, 0.472);
             }
 
-            span{
+            span.icons{
                 font-size: 1.3rem;
             }
+
+            
         }
 
         .morefromyoutube{
@@ -99,4 +109,50 @@
 }
     }
     
+}
+
+
+@media screen and (max-width:1295px){
+    .asideMenu{
+            flex: 1,0,100px;
+        ul{
+            border-bottom: 0;
+            margin-left: 0;
+            padding-left: .2rem;
+
+            li{
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+
+                span:last-child{
+                    font-size: .7rem;
+                }
+            }
+        }
+
+        ul.second-section{
+           li:nth-child(2),
+           li:nth-child(3),
+           li:nth-child(4),
+           li:nth-child(6),
+           li:nth-child(7){
+                display: none;
+                
+            }
+        }
+
+        .subscription,
+        .explore,
+        .moreFromYoutube,
+        .settings{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:882px){
+    .asideMenu{
+           display: none;
+    }
 }

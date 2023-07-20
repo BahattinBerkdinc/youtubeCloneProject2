@@ -1,0 +1,14 @@
+
+.homepage{
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    
+}
+
+@media screen and (max-width:882px){
+    .homepage{
+        justify-content: center;
+        
+    }
+}

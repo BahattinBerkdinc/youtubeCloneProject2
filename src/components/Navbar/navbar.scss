@@ -2,7 +2,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 2.1rem;
     border: 1px solid black;
 
     svg{
@@ -29,7 +29,7 @@ nav{
         justify-content: center;
         gap: 1rem;
 
-        .input{}
+        
 
     }
 
@@ -44,7 +44,7 @@ nav{
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
             background-color: #F8F9FA;
-}
+    }
 
     .nav-right{
         flex: 1;
@@ -78,4 +78,29 @@ nav{
 }
     }
 
+}
+
+
+@media screen and (max-width:882px){
+    .nav-mid{
+        justify-content: flex-end;
+       
+        .input{
+            display: none;
+        }
+
+        #basic-addon1{
+            background-color: transparent;
+            border: none;
+            margin-left: auto;
+            padding-right: 0;
+            font-size: 1.2rem;
+        }
+    }
+
+
+    .mic{
+        background-color: transparent!important; 
+        margin-right: 1rem;    
+    }
 }
