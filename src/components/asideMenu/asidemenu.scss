@@ -7,11 +7,6 @@
     height: 100vh;
     top: 0;
     bottom: 0;
-    transition: all 500ms ease-in;
-    -webkit-transition: all 500ms ease-in;
-    -moz-transition: all 500ms ease-in;
-    -ms-transition: all 500ms ease-in;
-    -o-transition: all 500ms ease-in;
     background-color: white;
     overflow-y: auto;
 
@@ -60,12 +55,7 @@
             -ms-border-radius: 15px;
             -o-border-radius: 15px;
             font-size: .8rem;
-            font-weight: 200;
-            transition: all 500ms ease-in-out ;
-            -webkit-transition: all 500ms ease-in-out ;
-            -moz-transition: all 500ms ease-in-out ;
-            -ms-transition: all 500ms ease-in-out ;
-            -o-transition: all 500ms ease-in-out ;
+            font-weight: 200; 
             cursor: pointer;
             &:hover
             {
@@ -154,5 +144,53 @@
 @media screen and (max-width:882px){
     .asideMenu{
            display: none;
+    }
+}
+
+
+
+
+    .toggleActive{
+        margin-left: .3rem;
+        margin-top: 1.5rem;
+    ul{
+        border-bottom: 0;
+        margin-left: 0;
+        padding-left: .2rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+
+        li{
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+
+            span.icons{
+                font-size: 1.3rem;
+            }
+            span:last-child{
+                font-size: .7rem;
+            }
+        }
+    }
+
+    ul.second-section{
+       li:nth-child(2),
+       li:nth-child(3),
+       li:nth-child(4),
+       li:nth-child(6),
+       li:nth-child(7){
+            display: none;
+            
+        }
+    }
+
+    .subscription,
+    .explore,
+    .moreFromYoutube,
+    .settings{
+        display: none;
     }
 }

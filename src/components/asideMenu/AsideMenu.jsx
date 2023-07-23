@@ -25,9 +25,11 @@ const iconComponents = {
   AiOutlineHistory,CiYoutube,BiTimeFive,AiOutlineDownload,MdKeyboardArrowDown,AiOutlineLike,AiOutlineFire,AiOutlineShopping,BiMoviePlay,BsMusicNote,MdLiveTv,SiYoutubegaming,BiNews,GiChampions,GoLightBulb,GiClothes,MdOutlinePodcasts,SiYoutubestudio,TbBrandYoutubeKids,TiSocialYoutube,CiSettings,CiFlag1,BiHelpCircle,MdOutlineFeedback,TfiCup
 };
 
-const AsideMenu = () => {
+const AsideMenu = ({toggleAside}) => {
 
   const [data, setData] = useState([]);
+
+console.log(toggleAside);
 
 
 const renderIcon = (iconName) => {
@@ -60,7 +62,7 @@ const renderIcon = (iconName) => {
   console.log(data);
 
   return (
-    <div className='asideMenu'>
+    <div className={` ${toggleAside ? "toggleActive" : "asideMenu"}`} >
       <ul className='asideItem' >
       {list.slice(0,4).map((item) => (
           <li key={item.id}><span className="icons">{renderIcon(item.icon)}</span><span>{item.content}</span></li>

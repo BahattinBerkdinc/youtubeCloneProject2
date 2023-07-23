@@ -1,7 +1,7 @@
 
 .homepage{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: flex-start;
     
 }
@@ -11,4 +11,10 @@
         justify-content: center;
         
     }
+}
+
+.activeToggle{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }

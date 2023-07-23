@@ -3,7 +3,6 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 0 2.1rem;
-    border: 1px solid black;
 
     svg{
         cursor: pointer;
@@ -28,6 +27,15 @@ nav{
         display: flex;
         justify-content: center;
         gap: 1rem;
+
+        .input{
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        #basic-addon1{
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
 
         
 
@@ -97,7 +105,6 @@ nav{
             font-size: 1.2rem;
         }
     }
-
 
     .mic{
         background-color: transparent!important; 

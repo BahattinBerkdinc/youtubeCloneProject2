@@ -1,0 +1,99 @@
+.videoInfo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    >span{
+        font-size: 1rem;
+        font-weight: 900;
+    }
+
+    .videoInfo-top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        >.left-side{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .channel-pic{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border: 1px solid black;
+
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                }
+
+                .channel-info{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 1rem;
+
+                    >span:first-child{
+                        font-size:1rem;
+                        font-weight: 900;
+                    }
+                    >span:last-child{
+                        font-size: .7rem;
+                        color: grey;
+                    }
+                }
+                .subscribe-btn{
+                    border-radius: 50px;
+                    -webkit-border-radius: 50px;
+                    -moz-border-radius: 50px;
+                    -ms-border-radius: 50px;
+                    -o-border-radius: 50px;
+}
+        }
+
+        >.right-side{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            >div{
+                padding: .5rem .8rem;
+                background-color: rgba(211, 211, 211, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .7rem;
+                font-size: .8rem;
+
+                border-radius: 50px  ;
+                -webkit-border-radius: 50px  ;
+                -moz-border-radius: 50px  ;
+                -ms-border-radius: 50px  ;
+                -o-border-radius: 50px  ;
+
+                cursor: pointer;
+
+                &>svg{
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                }
+
+               
+}
+        }
+
+    }
+}

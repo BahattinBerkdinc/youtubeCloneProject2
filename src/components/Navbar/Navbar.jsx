@@ -9,12 +9,16 @@ import {Form, InputGroup} from "react-bootstrap";
 import "./navbar.scss"
 
 
-const Navbaryt = () => {
+const Navbaryt = ({toggleAside,setToggleAside}) => {
+
+
+
+
   return (
     <nav>
        <div className='nav-left'>
-       <Burger/>
-        <img style={{width:"100px"}} className='image-fluid' src={logo} alt="" />
+      <span onClick={()=>setToggleAside(!toggleAside)}> <Burger /></span>
+        <img  style={{width:"100px"}} className='image-fluid' src={logo} alt="" />
        </div>
 
     <div className="nav-mid">
