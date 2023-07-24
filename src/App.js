@@ -12,14 +12,11 @@ function App() {
 
   return (
     <div className="App">
-    
-      {/* <Homepage toggleAside={toggleAside} />  */}
-    {/* <VideoDetail/>  */}
     <Router>
      <Navbar toggleAside={toggleAside} setToggleAside={setToggleAside}/>
       <Routes>
         <Route path="/" element={<Homepage toggleAside={toggleAside} />} />
-        <Route path="/video/:videoId" element={<VideoDetail />} />
+        <Route path="/video/:videoId" element={<VideoDetail toggleAside={toggleAside} />} />
       </Routes>
     </Router>
     </div>

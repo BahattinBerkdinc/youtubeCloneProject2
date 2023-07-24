@@ -129,13 +129,8 @@
 
         .left-side{
             .video-comments-div{
-                order: 2;
-                background-color: red;
+                display: none;
             }
-        }
-        .right-side{
-            order: 1;
-            background-color: blue;
         }
     }
 }

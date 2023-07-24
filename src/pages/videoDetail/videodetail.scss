@@ -1,3 +1,30 @@
 .video-detail-page{
     padding: 1rem;
+    position: relative;
+
+    .detail-aside{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: translateX(-100%);
+        -webkit-transform: translateX();
+        -moz-transform: translateX();
+        -ms-transform: translateX();
+        -o-transform: translateX();
+        transition: all 500ms ease-in ;
+        -webkit-transition: all 500ms ease-in ;
+        -moz-transition: all 500ms ease-in ;
+        -ms-transition: all 500ms ease-in ;
+        -o-transition: all 500ms ease-in ;
+}
+
+}
+
+.show-aside{
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
 }
