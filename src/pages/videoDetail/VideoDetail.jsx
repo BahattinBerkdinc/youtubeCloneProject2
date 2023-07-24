@@ -1,11 +1,9 @@
 import React from 'react'
-import Navbaryt from '../../components/Navbar/Navbar'
 import VideoPlayer from '../../components/detailsPageComps/videoPlayer/VideoPlayer'
-
+import './videodetail.scss'
 const VideoDetail = () => {
   return (
-    <div>
-      <Navbaryt/>
+    <div className='video-detail-page'>
       <VideoPlayer/>
     </div>
   )

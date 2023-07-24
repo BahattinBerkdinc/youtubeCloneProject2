@@ -7,6 +7,7 @@ import {BiVideoPlus} from 'react-icons/bi';
 import {IoMdNotificationsOutline} from 'react-icons/io';
 import {Form, InputGroup} from "react-bootstrap";
 import "./navbar.scss"
+import { Link } from 'react-router-dom';
 
 
 const Navbaryt = ({toggleAside,setToggleAside}) => {
@@ -18,7 +19,7 @@ const Navbaryt = ({toggleAside,setToggleAside}) => {
     <nav>
        <div className='nav-left'>
       <span onClick={()=>setToggleAside(!toggleAside)}> <Burger /></span>
-        <img  style={{width:"100px"}} className='image-fluid' src={logo} alt="" />
+       <Link to="/"> <img  style={{width:"100px"}} className='image-fluid' src={logo} alt="" /></Link>
        </div>
 
     <div className="nav-mid">

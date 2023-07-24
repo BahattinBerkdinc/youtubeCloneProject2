@@ -1,19 +1,20 @@
 
 .maindiv{
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
     max-width: 1700px;
     margin: 0 auto;
     margin-top: 3rem;
 
     >.left-side{
             flex: 4;
-            
 
             .video{
             max-height: 700px;
             }
     }
+
+    
 
 .videos{
     flex: 1;
@@ -23,7 +24,7 @@
         flex-direction: row;
         align-items: center;
         gap: 10px;
-        margin-bottom: -5px;
+        margin-bottom: -15px;
         min-width: 350px!important;
     
         .video-card-top{
@@ -38,13 +39,16 @@
             -o-border-radius: 10px;
             overflow: hidden;
             position: relative;
+            max-width: 150px;
+
+
             .duration
     {
                 position: absolute;
                 right: .1rem;
                 bottom: .1rem;
                 color: white;
-                font-size: .8rem;
+                font-size: .7rem;
                 background-color: rgba(0, 0, 0, 0.732);
                 padding: .1rem .5rem;
                 border-radius: 5px;
@@ -83,7 +87,7 @@
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    font-weight: 900;
+                    font-weight: 600;
                 }
                 .video-title.long {
                     white-space: normal;
@@ -118,3 +122,20 @@
 
 }
 
+
+@media screen and (max-width:970px) {
+    .maindiv{
+        flex-direction: column;
+
+        .left-side{
+            .video-comments-div{
+                order: 2;
+                background-color: red;
+            }
+        }
+        .right-side{
+            order: 1;
+            background-color: blue;
+        }
+    }
+}

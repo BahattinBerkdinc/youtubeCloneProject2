@@ -6,7 +6,7 @@
 
     >span{
         font-size: 1rem;
-        font-weight: 900;
+        font-weight: 600;
     }
 
     .videoInfo-top{
@@ -21,11 +21,11 @@
 
             .channel-pic{
                 display: flex;
-                align-items: center;
                 justify-content: center;
                 width: 50px;
                 height: 50px;
                 border: 1px solid black;
+                overflow: hidden;
 
                 img{
                     width: 100%;
@@ -47,7 +47,7 @@
 
                     >span:first-child{
                         font-size:1rem;
-                        font-weight: 900;
+                        font-weight: 600;
                     }
                     >span:last-child{
                         font-size: .7rem;
@@ -97,3 +97,21 @@
 
     }
 }
+
+
+
+@media screen and (max-width:970px) {
+    .videoInfo{
+        .videoInfo-top{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+
+            .right-side{
+                align-self: center;
+            }
+        }
+    }
+}
+
+
