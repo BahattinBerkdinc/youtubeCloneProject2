@@ -25,7 +25,7 @@
 }
     
       &:hover {
-        overflow-y: auto; /* Farenin üzerine gelince scroll çubuğunu göster */
+        overflow-y: auto; 
        
       }
 
@@ -64,6 +64,7 @@
 
             span.icons{
                 font-size: 1.3rem;
+                cursor: pointer;
             }
 
             
@@ -147,9 +148,6 @@
     }
 }
 
-
-
-
     .toggleActive{
         margin-left: .3rem;
         margin-top: 1.5rem;
@@ -166,6 +164,7 @@
             display: flex;
             flex-direction: column;
             gap: 0;
+            cursor: pointer;
 
             span.icons{
                 font-size: 1.3rem;

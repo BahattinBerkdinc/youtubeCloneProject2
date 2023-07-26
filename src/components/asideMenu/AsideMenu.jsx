@@ -14,6 +14,7 @@ import {TbBrandYoutubeKids} from 'react-icons/tb';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import axios from 'axios';
 import list from './asideItems.json'
+import {useSelector } from 'react-redux';
 
 
 const iconComponents = {
@@ -25,11 +26,12 @@ const iconComponents = {
   AiOutlineHistory,CiYoutube,BiTimeFive,AiOutlineDownload,MdKeyboardArrowDown,AiOutlineLike,AiOutlineFire,AiOutlineShopping,BiMoviePlay,BsMusicNote,MdLiveTv,SiYoutubegaming,BiNews,GiChampions,GoLightBulb,GiClothes,MdOutlinePodcasts,SiYoutubestudio,TbBrandYoutubeKids,TiSocialYoutube,CiSettings,CiFlag1,BiHelpCircle,MdOutlineFeedback,TfiCup
 };
 
-const AsideMenu = ({toggleAside}) => {
-
+const AsideMenu = () => {
+  
+  const toggleAside = useSelector(state=>state.burgerToggle.toggleAside);
   const [data, setData] = useState([]);
 
-console.log(toggleAside);
+
 
 
 const renderIcon = (iconName) => {
@@ -50,7 +52,6 @@ const renderIcon = (iconName) => {
       // console.log(response.data.items[0].snippet);
       setData(response.data.items);
     } catch (error) {
-      console.error(error);
     }
   }
 
@@ -59,7 +60,6 @@ const renderIcon = (iconName) => {
     getChannelInfo();
   },[])
   
-  console.log(data);
 
   return (
     <div className={` ${toggleAside ? "toggleActive" : "asideMenu"}`} >
@@ -81,7 +81,7 @@ const renderIcon = (iconName) => {
         <div className='aside-title '>Subscription</div>
           {
               data.map((item)=>(
-                    <li className='aside-channel'>
+                    <li key={item.id} className='aside-channel'>
                        <div className="profile-photo">
                         <img src={item.snippet.thumbnails.medium.url} alt="" />
                        </div>

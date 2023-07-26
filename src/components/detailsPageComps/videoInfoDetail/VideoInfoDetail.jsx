@@ -10,9 +10,9 @@ const VideoInfoDetail = ({selectedVideo}) => {
   return (
     <div className={`video-detail-info ${showMore ? 'show' : ''}`}>
       <div className="video-detail-info-top">
-      <span>{formatViews(selectedVideo.statistics.viewCount)} Views - {getTimeAgo(selectedVideo.snippet.publishedAt)} <span style={{color:"blue", fontWeight:"200", fontSize:".9rem", marginLeft:"1rem"}}>  #{selectedVideo.snippet.tags?.slice(0,1)}</span></span> 
+      <span>{formatViews(selectedVideo.statistics.viewCount)} Views - {getTimeAgo(selectedVideo.snippet.publishedAt)} <span style={{color:"blue", fontWeight:"400", fontSize:".8rem", marginLeft:"1rem", cursor:"pointer"}}>  #{selectedVideo.snippet.tags?.slice(0,1)}</span></span> 
       
-        <pre>{selectedVideo.snippet.description}</pre>
+        <pre><p>{selectedVideo.snippet.description}</p></pre>
       
       </div>
       <div className="video-detail-info-bottom">

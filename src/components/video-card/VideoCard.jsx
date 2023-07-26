@@ -2,29 +2,39 @@ import React, { useEffect } from 'react'
 import {Col} from "react-bootstrap"
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchVideoInfo } from '../../redux/slices/ytvideoSlice'
+import { setSelectedVideo } from '../../redux/slices/selectedVideoSlice';
 import './videocard.scss'
 import VideoSkelaton from '../videoSkeleton/VideoSkelaton'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate,  } from 'react-router-dom'
 import { formatDuration, formatViews, getTimeAgo } from '../../helpers/helpers'
 
 
-const VideoCard = () => {
+const VideoCard = ({inputValue}) => {
 
     const dispatch = useDispatch()
     const videos = useSelector(state=>state.videosInfo.videoInfo)
+    const selectedVideoId = useSelector((state) => state.selectedVideo.selectedVideo?.id || null)
     const isLoading = useSelector(state=>state.videosInfo.isLoading)
     const error = useSelector(state=>state.videosInfo.error)
+    const navigate = useNavigate()
+
+    console.log(inputValue);
     
     useEffect(() => {
         dispatch(fetchVideoInfo())
     },[dispatch])
     
+    const handleVideoClick = (videoId) => {
+      dispatch(setSelectedVideo(videos.find((video) => video.id === videoId)));
+      window.scrollTo(0, 0);
+      navigate(`/video/${videoId}`);
+    };
 
-    
+    const searchedVideo = videos.filter((video)=>video.snippet.title.toLowerCase().includes(inputValue.toLowerCase()))
 
-    console.log(videos);
+    console.log(searchedVideo);
 
-   
+
 
   
 
@@ -34,11 +44,11 @@ const VideoCard = () => {
       {isLoading && <VideoSkelaton/>}
       {error && <p>{error}</p>}
       {
-          videos.map((video)=>(
+          searchedVideo.map((video)=>(
               <Col sm={12} md={6} lg={3} key={video.id} >
-                    <div className='videoCard custom-flex-direction'  >
-                      <Link to={`video/${video.id}`}>
-                      <div className="video-card-top">
+                    <div className={`videoCard custom-flex-direction ${video.id === selectedVideoId ? 'selected' : ''}`}  >
+                      <Link to={`/video/${video.id}`}>
+                      <div className="video-card-top" onClick={() => handleVideoClick(video.id)}>
                            <img src={video.snippet.thumbnails.medium.url} className='img-fluid' alt="" />
                            <span className='duration'>{formatDuration(video.contentDetails.duration)}</span>
                     </div>

@@ -2,13 +2,14 @@ import React from 'react'
 import {Row} from "react-bootstrap"
 import VideoCard from '../video-card/VideoCard'
 import './mainvideocontent.scss'
-const MainVideoContent = () => {
+const MainVideoContent = ({inputValue}) => {
+
 
 
   return (
     <Row className='main-video-content'>
       
-      <VideoCard/>
+      <VideoCard inputValue={inputValue}/>
     
     </Row>
   )

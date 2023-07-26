@@ -3,6 +3,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 0 2.1rem;
+    margin-top: 1rem;
 
     svg{
         cursor: pointer;
@@ -31,6 +32,13 @@ nav{
         .input{
             border-top-left-radius: 30px;
             border-bottom-left-radius: 30px;
+            outline: none;
+
+            &:focus{
+                border-color: blue;
+                outline: transparent;
+            }
+           
         }
         #basic-addon1{
             border-top-right-radius: 30px;
@@ -63,6 +71,29 @@ nav{
 
         span{
             font-size: 1.3rem;
+        }
+
+        span.notifications{
+                position: relative;
+                cursor: pointer;
+            .notification{
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                color: white;
+                font-size: .7rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 0;
+                right: -8px;
+                border-radius:50% ;
+                -webkit-border-radius:50% ;
+                -moz-border-radius:50% ;
+                -ms-border-radius:50% ;
+                -o-border-radius:50% ;
+}
         }
 
         .user-photo{
@@ -111,3 +142,69 @@ nav{
         margin-right: 1rem;    
     }
 }
+
+
+.nav-show{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.1rem;
+
+    svg{
+        cursor: pointer;
+    }
+
+
+    .nav-left{
+        display: none;
+    }
+
+    .nav-mid{
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        .input{
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            display: flex;
+        }
+        #basic-addon1{
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border: 1px solid lightgrey;
+            margin-left: auto;
+            padding-right: 1.2rem;
+            font-size: 1.2rem;
+            background-color: rgba(211, 211, 211, 0.149);
+        }
+
+        
+
+    }
+
+      .mic{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .7rem;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            background-color: #F8F9FA;
+    }
+
+    .nav-right{
+       display: none;
+    }
+
+}
+
+
+.show{
+    display: flex;
+}
+

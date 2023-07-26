@@ -2,11 +2,17 @@ import React from 'react'
 import AsideMenu from "../../components/asideMenu/AsideMenu"
 import MainVideoContent from '../../components/main-video-content/MainVideoContent'
 import "./homepage.scss"
-const Homepage = ({toggleAside}) => {
+import { useSelector } from 'react-redux'
+const Homepage = () => {
+
+  const toggleAside = useSelector(state=>state.burgerToggle.toggleAside)
+
+  const inputValue = useSelector(state=>state.input)
+
   return (
     <div className={` ${toggleAside ? "activeToggle" : "homepage"}`}>
-        <AsideMenu toggleAside={toggleAside}/>
-        <MainVideoContent toggleAside={toggleAside}/>
+        <AsideMenu/>
+        <MainVideoContent inputValue={inputValue} />
     </div>
   )
 }

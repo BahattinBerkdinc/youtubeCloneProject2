@@ -6,7 +6,6 @@ import avatar from "../../../assets/images/avatar/avatar.jpeg"
 const VideoComments = ({selectedVideo}) => {
 
   const [showReply,setShowReply] = useState(false)
-  console.log(showReply);
   return (
     <div className='video-comments'>
       <span>{selectedVideo.statistics.commentCount} Comments</span>

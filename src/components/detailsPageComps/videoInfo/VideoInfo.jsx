@@ -4,8 +4,12 @@ import {AiOutlineLike,AiOutlineDislike} from 'react-icons/ai'
 import {PiShareFatThin} from "react-icons/pi"
 import {LiaDownloadSolid} from 'react-icons/lia'
 import { BsThreeDots } from 'react-icons/bs'
-import { formatViews } from '../../../helpers/helpers'
+import { formatNumber, formatViews, generateRandomNumber } from '../../../helpers/helpers'
 const VideoInfo = ({selectedVideo}) => {
+
+  const randomNumber = generateRandomNumber(200000, 5000000);
+  const formattedNumber = formatNumber(randomNumber);
+
   return (
     <div className='videoInfo'>
         <span>{selectedVideo.snippet.title}</span>
@@ -16,7 +20,7 @@ const VideoInfo = ({selectedVideo}) => {
                 </div>
                 <div className="channel-info">
                   <span>{selectedVideo.snippet.channelTitle}</span>
-                  <span>1.5M subscribe</span>
+                  <span>{formattedNumber} subscribe</span>
                 </div>
                 <button className="subscribe-btn btn btn-dark">Subscribe</button>
             </div>

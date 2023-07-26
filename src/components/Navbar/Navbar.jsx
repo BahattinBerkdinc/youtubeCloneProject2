@@ -1,37 +1,77 @@
-import React from 'react'
+import React, {useEffect, useState } from 'react'
 import logo from "../../assets/images/logo/ytLogo.png"
 import Burger from '../burgerMenu/Burger'
-import {AiOutlineSearch} from "react-icons/ai";
+import {AiOutlineArrowLeft, AiOutlineSearch} from "react-icons/ai";
 import {BsFillMicFill} from "react-icons/bs";
 import {BiVideoPlus} from 'react-icons/bi';
 import {IoMdNotificationsOutline} from 'react-icons/io';
 import {Form, InputGroup} from "react-bootstrap";
 import "./navbar.scss"
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToggleAside } from '../../redux/slices/burgerToggleSlice';
+import { setInputvalue } from '../../redux/slices/inputSlice';
 
 
-const Navbaryt = ({toggleAside,setToggleAside}) => {
+const Navbaryt = () => {
+  const [searchBtn,setSearchBtn] = useState(false)
 
+  const toggleAside = useSelector(state => state.burgerToggle.toggleAside)
+  const inputValue = useSelector(state => state.input.input)
+  const dispatch = useDispatch();
 
+  const handleChangeInput = (e) => {
+    dispatch(setInputvalue(e.target.value))
+  }
 
+  const handleBurgerClick = () => {
+    dispatch(setToggleAside(!toggleAside))
+  }
+
+  const showInput = () => {
+      if (window.innerWidth < 883) {
+        setSearchBtn(true); 
+      }else{
+        setSearchBtn(false);
+      }
+  }
+
+ useEffect(() => {
+  window.addEventListener('resize', showInput);
+  
+  return ()=>{
+    window.removeEventListener('resize', showInput);
+  }
+ },[])
+
+  
+  
 
   return (
-    <nav>
+    <nav className={`${searchBtn ? "nav-show" : ""}`}>
        <div className='nav-left'>
-      <span onClick={()=>setToggleAside(!toggleAside)}> <Burger /></span>
+      <span onClick={handleBurgerClick}> <Burger /></span>
        <Link to="/"> <img  style={{width:"100px"}} className='image-fluid' src={logo} alt="" /></Link>
        </div>
 
     <div className="nav-mid">
+      <AiOutlineArrowLeft 
+      className={`align-self-center ${searchBtn ? "show" : "d-none"}`} 
+      style={{fontSize:"2rem",cursor:"pointer"}}
+      onClick={()=>setSearchBtn(false)}
+      />
     <InputGroup >
         <Form.Control 
         className='input'
           placeholder="Search"
           aria-label="Username"
           aria-describedby="basic-addon1"
+          value={inputValue}
+          onChange={handleChangeInput}
+          
         />
-        <InputGroup.Text id="basic-addon1">
-          <AiOutlineSearch />
+        <InputGroup.Text id="basic-addon1" onClick={showInput}>
+          <AiOutlineSearch  />
         </InputGroup.Text>
        
       </InputGroup>
@@ -44,8 +84,9 @@ const Navbaryt = ({toggleAside,setToggleAside}) => {
         <span>
         <BiVideoPlus/>
         </span>
-        <span>
+        <span className='notifications'>
           <IoMdNotificationsOutline/>
+          <span className='notification'>9+</span>
         </span>
         <div className="user-photo">
           <img src={require('../../assets/images/fff/linkednProfilePic.png')} alt="" />
