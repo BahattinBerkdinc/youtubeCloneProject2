@@ -18,7 +18,7 @@ const VideoCard = ({inputValue}) => {
     const error = useSelector(state=>state.videosInfo.error)
     const navigate = useNavigate()
 
-    console.log(inputValue);
+
     
     useEffect(() => {
         dispatch(fetchVideoInfo())
@@ -30,11 +30,19 @@ const VideoCard = ({inputValue}) => {
       navigate(`/video/${videoId}`);
     };
 
-    const searchedVideo = videos.filter((video)=>video.snippet.title.toLowerCase().includes(inputValue.toLowerCase()))
-
-    console.log(searchedVideo);
 
 
+    // const searchedVideos = videos.filter((video)=>video.snippet.title.toLowerCase().includes(inputValue))
+
+    // console.log(inputValue);
+
+    const searchedVideos = videos.filter((video) => {
+      if (inputValue) {
+        return video.snippet.title.toLowerCase().includes(inputValue.toLowerCase());
+      } else {
+        return true; // Tüm videoları döndür
+      }
+    });
 
   
 
@@ -44,7 +52,8 @@ const VideoCard = ({inputValue}) => {
       {isLoading && <VideoSkelaton/>}
       {error && <p>{error}</p>}
       {
-          searchedVideo.map((video)=>(
+      
+              searchedVideos.map((video)=>(
               <Col sm={12} md={6} lg={3} key={video.id} >
                     <div className={`videoCard custom-flex-direction ${video.id === selectedVideoId ? 'selected' : ''}`}  >
                       <Link to={`/video/${video.id}`}>
@@ -53,31 +62,25 @@ const VideoCard = ({inputValue}) => {
                            <span className='duration'>{formatDuration(video.contentDetails.duration)}</span>
                     </div>
                       </Link>
-                   
-
-
-<div className="video-card-bottom">
-   <div className="channel-pic">
-       <img src={video.snippet.thumbnails.medium.url} className='img-fluid' alt="" />
-   </div>
-         <div className="video-info">
-            <h4 className={`video-title ${video.snippet.title.length > 30 ? 'long' : ''}`}>{video.snippet.title}</h4>
-            <span className="channel-name">{video.snippet.channelTitle}</span>
+              <div className="video-card-bottom">
+                   <div className="channel-pic">
+                       <img src={video.snippet.thumbnails.medium.url} className='img-fluid' alt="" />
+                   </div>
+               <div className="video-info">
+                       <h4 className={`video-title ${video.snippet.title.length > 30 ? 'long' : ''}`}>{video.snippet.title}</h4>
+                 <span className="channel-name">{video.snippet.channelTitle}</span>
                <div className='video-sup-info'>
-            <span>{formatViews(video.statistics.viewCount)} views</span>
-                  <div className="dot"></div>
-            <span>{getTimeAgo(video.snippet.publishedAt)}</span>
-       </div>
-</div>
-</div>
-
-
-</div>
-              </Col>
-                
-     
-            ))
-        }
+                     <span>{formatViews(video.statistics.viewCount)} views</span>
+                        <div className="dot"></div>
+                     <span>{getTimeAgo(video.snippet.publishedAt)}</span>
+               </div>
+            </div>
+        </div>
+      </div>
+              </Col>))
+              
+              }
+      
       </>
   )
 }
