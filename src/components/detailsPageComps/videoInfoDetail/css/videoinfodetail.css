@@ -1,0 +1,91 @@
+.video-detail-info {
+  background-color: rgba(211, 211, 211, 0.5);
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  position: relative;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.video-detail-info .video-detail-info-top {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+.video-detail-info .video-detail-info-top > span {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.video-detail-info .video-detail-info-top > pre {
+  font-family: "Roboto";
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.video-detail-info .video-detail-info-top > pre p {
+  overflow: hidden;
+}
+.video-detail-info .video-detail-info-bottom {
+  border-top: 3px solid white;
+  padding-top: 1rem;
+}
+.video-detail-info .video-detail-info-bottom > .left-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 3rem;
+}
+.video-detail-info .video-detail-info-bottom > .left-side .channel-pic {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.video-detail-info .video-detail-info-bottom > .left-side .channel-pic img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.video-detail-info .video-detail-info-bottom > .left-side .channel-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+.video-detail-info .video-detail-info-bottom > .left-side .channel-info > span:first-child {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.video-detail-info .video-detail-info-bottom > .left-side .channel-info > span:last-child {
+  font-size: 0.7rem;
+  color: grey;
+}
+.video-detail-info .show-btn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding-left: 1rem;
+  background-color: rgb(235, 233, 233);
+}
+
+.show {
+  max-height: none;
+}/*# sourceMappingURL=videoinfodetail.css.map */

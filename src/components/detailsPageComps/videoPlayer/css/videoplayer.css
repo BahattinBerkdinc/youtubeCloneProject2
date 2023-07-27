@@ -1,0 +1,113 @@
+.maindiv {
+  display: flex;
+  gap: 1rem;
+  max-width: 1700px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+.maindiv > .left-side {
+  flex: 4;
+  overflow: hidden;
+}
+.maindiv > .left-side .video {
+  max-height: 700px;
+}
+.maindiv .videos {
+  flex: 1;
+}
+.maindiv .videos .custom-flex-direction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: -15px;
+  min-width: 350px !important;
+}
+.maindiv .videos .custom-flex-direction .video-card-top {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  max-width: 150px;
+}
+.maindiv .videos .custom-flex-direction .video-card-top .duration {
+  position: absolute;
+  right: 0.1rem;
+  bottom: 0.1rem;
+  color: white;
+  font-size: 0.7rem;
+  background-color: rgba(0, 0, 0, 0.732);
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.maindiv .videos .custom-flex-direction .video-card-top img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom .channel-pic {
+  display: none;
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom .video-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.3rem;
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom .video-info h4 {
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom .video-info .video-title.long {
+  white-space: normal;
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom .video-info .channel-name {
+  font-size: 0.7rem;
+  color: rgb(84, 82, 82);
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom .video-info .video-sup-info {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom .video-info .video-sup-info .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: grey;
+}
+.maindiv .videos .custom-flex-direction .video-card-bottom .video-info .video-sup-info span {
+  color: grey;
+  font-size: 0.7rem;
+}
+
+@media screen and (max-width: 970px) {
+  .maindiv {
+    flex-direction: column;
+  }
+  .maindiv .left-side .video-comments-div {
+    display: none;
+  }
+}/*# sourceMappingURL=videoplayer.css.map */

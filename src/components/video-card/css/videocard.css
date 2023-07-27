@@ -1,0 +1,92 @@
+@charset "UTF-8";
+.videoCard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+.videoCard .video-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid red;
+}
+.videoCard .video-card-top .duration {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.3rem;
+  color: white;
+  font-size: 0.8rem;
+}
+.videoCard .video-card-top img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.videoCard .video-card-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.videoCard .video-card-bottom .channel-pic {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+}
+.videoCard .video-card-bottom .channel-pic img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.videoCard .video-card-bottom .video-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.videoCard .video-card-bottom .video-info h4 {
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+.videoCard .video-card-bottom .video-info .video-title.long {
+  white-space: normal; /* Metni bir alt satıra taşımak için */
+}
+.videoCard .video-card-bottom .video-info .channel-name {
+  font-size: 0.9rem;
+  color: rgb(84, 82, 82);
+}
+.videoCard .video-card-bottom .video-info .video-sup-info {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.videoCard .video-card-bottom .video-info .video-sup-info .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: grey;
+}
+.videoCard .video-card-bottom .video-info .video-sup-info span {
+  color: grey;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=videocard.css.map */

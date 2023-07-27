@@ -1,0 +1,156 @@
+.asideMenu {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  overflow-y: auto;
+}
+.asideMenu::-webkit-scrollbar {
+  width: 3px;
+}
+.asideMenu::-webkit-scrollbar-thumb {
+  background-color: rgba(85, 85, 85, 0.5647058824);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  visibility: hidden;
+}
+.asideMenu:hover {
+  overflow-y: auto;
+}
+.asideMenu ul {
+  list-style: none;
+  padding: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.332);
+}
+.asideMenu ul .aside-title {
+  margin: 1rem 0;
+}
+.asideMenu ul li {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem;
+  border-radius: 15px;
+  gap: 1.5rem;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.asideMenu ul li:hover {
+  background-color: rgba(211, 211, 211, 0.472);
+}
+.asideMenu ul li span.icons {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.asideMenu ul .morefromyoutube span {
+  color: red;
+}
+.asideMenu .aside-channel {
+  display: flex;
+  align-items: center;
+}
+.asideMenu .aside-channel .profile-photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+}
+.asideMenu .aside-channel .profile-photo img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1295px) {
+  .asideMenu {
+    flex: 1, 0, 100px;
+  }
+  .asideMenu ul {
+    border-bottom: 0;
+    margin-left: 0;
+    padding-left: 0.2rem;
+  }
+  .asideMenu ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .asideMenu ul li span:last-child {
+    font-size: 0.7rem;
+  }
+  .asideMenu ul.second-section li:nth-child(2),
+  .asideMenu ul.second-section li:nth-child(3),
+  .asideMenu ul.second-section li:nth-child(4),
+  .asideMenu ul.second-section li:nth-child(6),
+  .asideMenu ul.second-section li:nth-child(7) {
+    display: none;
+  }
+  .asideMenu .subscription,
+  .asideMenu .explore,
+  .asideMenu .moreFromYoutube,
+  .asideMenu .settings {
+    display: none;
+  }
+}
+@media screen and (max-width: 882px) {
+  .asideMenu {
+    display: none;
+  }
+}
+.toggleActive {
+  margin-left: 0.3rem;
+  margin-top: 1.5rem;
+}
+.toggleActive ul {
+  border-bottom: 0;
+  margin-left: 0;
+  padding-left: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+}
+.toggleActive ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  cursor: pointer;
+}
+.toggleActive ul li span.icons {
+  font-size: 1.3rem;
+}
+.toggleActive ul li span:last-child {
+  font-size: 0.7rem;
+}
+.toggleActive ul.second-section li:nth-child(2),
+.toggleActive ul.second-section li:nth-child(3),
+.toggleActive ul.second-section li:nth-child(4),
+.toggleActive ul.second-section li:nth-child(6),
+.toggleActive ul.second-section li:nth-child(7) {
+  display: none;
+}
+.toggleActive .subscription,
+.toggleActive .explore,
+.toggleActive .moreFromYoutube,
+.toggleActive .settings {
+  display: none;
+}/*# sourceMappingURL=asidemenu.css.map */

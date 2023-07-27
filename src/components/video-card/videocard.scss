@@ -1,7 +1,7 @@
 .videoCard{
     display: flex;
+    align-items: flex-start!important;
     flex-direction: column;
-    margin-bottom: 3rem;
 
 
     .video-card-top{
@@ -15,6 +15,7 @@
         -o-border-radius: 20px;
         overflow: hidden;
         position: relative;
+        margin: .7rem 0;
 
         .duration{
             position: absolute;
@@ -98,4 +99,9 @@
             }
         }
     }
+}
+
+
+@media (max-width:800px){
+   
 }
