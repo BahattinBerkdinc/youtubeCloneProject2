@@ -25,7 +25,7 @@ const VideoDetail = () => {
     <div className='video-detail-page'>
       <VideoPlayer selectedVideo={selectedVideo} />  
       <div className={`detail-aside ${toggleAside ? 'show-aside' : ''}`}>
-        <AsideMenu/>
+        <AsideMenu />
       </div>
     </div>
   )
